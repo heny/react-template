@@ -6,6 +6,7 @@
   "scripts": {
     "start": "pnpm dev",
     "dev": "cross-env NODE_ENV=development webpack serve --progress --hot --config ./webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --progress",
     "prettier": "prettier --write .",
     "lint": "eslint \"src/**/*.{ts,tsx}\" && stylelint src/**/*.less",
     "fix": "eslint --fix \"src/**/*.{ts,tsx}\" && stylelint --fix \"src/**/*.less\" && prettier --write .",
@@ -35,6 +36,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
+    "cssnano-preset-advanced": "^5.3.8",
     "dotenv-webpack": "^8.0.0",
     "eslint": "^8.20.0",
     "eslint-config-airbnb": "^19.0.4",

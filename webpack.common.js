@@ -19,7 +19,7 @@ module.exports = {
     main: ['./src/index', './src/styles/index.less'],
   },
   output: {
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(__dirname, './build'),
     filename: '[name].[contenthash].js',
     publicPath,
   },
