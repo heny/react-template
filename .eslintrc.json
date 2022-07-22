@@ -17,11 +17,20 @@
     "no-unused-vars": 0,
     "global-require": 0,
     "indent": 0,
+    "import/extensions": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/function-component-definition": 0,
+    "import/no-extraneous-dependencies": 0,
     "react/jsx-filename-extension": [
       2,
       {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }

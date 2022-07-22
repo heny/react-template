@@ -92,8 +92,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
-      '@': path.resolve(__dirname, '../src'),
-      public: path.resolve(__dirname, '../public'),
+      '@': path.resolve(__dirname, './src'),
+      public: path.resolve(__dirname, './public'),
     },
   },
   optimization: {
@@ -120,13 +120,13 @@ module.exports = {
         },
       }),
     ],
-    // splitChunks: {
-    //   chunks: 'all',
-    //   cacheGroups: {
-    //     defaultVendors: {
-    //       name: 'vendors',
-    //     },
-    //   },
-    // },
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        defaultVendors: {
+          name: 'vendors',
+        },
+      },
+    },
   },
 };
