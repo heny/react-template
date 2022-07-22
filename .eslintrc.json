@@ -16,6 +16,7 @@
   "rules": {
     "no-unused-vars": 0,
     "global-require": 0,
+    "indent": 0,
     "react/jsx-filename-extension": [
       2,
       {
