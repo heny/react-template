@@ -1,0 +1,23 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 info pnpm": {
+    "err": {
+      "name": "Error",
+      "message": "not found: mini-css-extract-plugin",
+      "code": "ENOENT",
+      "stack": "Error: not found: mini-css-extract-plugin\n    at getNotFoundError (D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:41495:51)\n    at Function.whichSync [as sync] (D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:41572:13)\n    at getCommandAbsolutePathSync (D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:43137:44)\n    at default_1 (D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:43146:32)\n    at D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:177618:39"
+    }
+  },
+  "2 error pnpm": {
+    "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+    "prefix": "D:\\project\\hypers\\react-template",
+    "err": {
+      "name": "pnpm",
+      "message": "not found: mini-css-extract-plugin",
+      "code": "ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL",
+      "stack": "Error: not found: mini-css-extract-plugin\n    at getNotFoundError (D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:41495:51)\n    at Function.whichSync [as sync] (D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:41572:13)\n    at getCommandAbsolutePathSync (D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:43137:44)\n    at default_1 (D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:43146:32)\n    at D:\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:177618:39"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedParameters": false,
+    "keyofStringsOnly": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "jsx": "react",
+    "noUnusedLocals": false,
+    "typeRoots": ["./node_modules/@types/", "./types/"],
+    // 添加 Alias 支持
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./src/styles/**/*", "./node_modules/**/*"]
+}
