@@ -14,6 +14,8 @@ const gitVersion = JSON.stringify(gitRevisionPlugin.version().split('-')[0]); //
 const publicPath = process.env.PUBLIC_PATH || '/';
 const devMode = process.env.NODE_ENV !== 'production';
 
+const localIconsPath = path.resolve(__dirname, './src/assets/icons');
+
 module.exports = {
   entry: {
     main: ['./src/index', './src/styles/index.less'],
@@ -49,15 +51,30 @@ module.exports = {
       {
         test: /\.(jpg|png|svg)$/,
         loader: 'url-loader',
-        // include: [
-        //   localIconsPath,
-        //   hypersIconsPath
-        // ],
+        exclude: [localIconsPath],
         options: {
           limit: 1,
           publicPath,
           name: 'resources/images/[name].[ext]',
         },
+      },
+      {
+        test: /\.svg$/i,
+        type: 'asset',
+        resourceQuery: /url/, // *.svg?url
+      },
+      {
+        test: /\.svg$/i,
+        include: [localIconsPath],
+        resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              icon: true,
+            },
+          },
+        ],
       },
     ],
   },
@@ -79,6 +96,15 @@ module.exports = {
       gitCommit: JSON.stringify(gitRevisionPlugin.commithash()),
       gitBranch: JSON.stringify(gitRevisionPlugin.branch()),
       publicPath,
+      minify: {
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: false,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
     }),
 
     /**
