@@ -3,7 +3,8 @@ import Consumer from '@/assets/icons/consumer.svg';
 // import ConsumerUrl from '@/assets/icons/consumer.svg?url';
 
 const Home: React.FC = () => (
-  <div>
+  <div className="home">
+    <img src="/resources/images/img.png" alt="" />
     Home
     {/* <img src={ConsumerUrl} alt="" /> */}
     <Consumer />

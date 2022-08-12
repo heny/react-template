@@ -49,13 +49,17 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpg|png|svg)$/,
-        loader: 'url-loader',
-        exclude: [localIconsPath],
-        options: {
-          limit: 1,
-          publicPath,
-          name: 'resources/images/[name].[ext]',
+        test: /\.(png|gif|jpg|jpeg|woff|ttf|eot)$/i,
+        type: 'asset',
+        generator: {
+          // 文件生成目录
+          filename: `${publicPath}resources/images/[name].[ext]`,
+        },
+        parser: {
+          dataUrlCondition: {
+            // 最大限制，小于限制转换Base64
+            maxSize: 200 * 1024,
+          },
         },
       },
       {
