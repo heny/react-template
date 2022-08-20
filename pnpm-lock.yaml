@@ -48,7 +48,6 @@ specifiers:
   react-helmet: ^6.1.0
   react-refresh: ^0.14.0
   react-router-dom: ^6.3.0
-  resolve-url-loader: ^5.0.0
   stylelint: ^14.9.1
   stylelint-config-prettier: ^9.0.3
   stylelint-config-standard: ^26.0.0
@@ -110,7 +109,6 @@ devDependencies:
   postcss-safe-parser: 6.0.0_postcss@8.4.14
   prettier: 2.7.1
   react-refresh: 0.14.0
-  resolve-url-loader: 5.0.0
   stylelint: 14.9.1
   stylelint-config-prettier: 9.0.3_stylelint@14.9.1
   stylelint-config-standard: 26.0.0_stylelint@14.9.1
@@ -3136,17 +3134,6 @@ packages:
       }
     engines: { node: '>=0.4.0' }
     hasBin: true
-    dev: true
-
-  /adjust-sourcemap-loader/4.0.0:
-    resolution:
-      {
-        integrity: sha512-OXwN5b9pCUXNQHJpwwD2qP40byEmSgzj8B4ydSN0uMNYWiFmJ6x6KwUllMmfk8Rwu/HJDFR7U8ubsWBoN0Xp0A==,
-      }
-    engines: { node: '>=8.9' }
-    dependencies:
-      loader-utils: 2.0.2
-      regex-parser: 2.2.11
     dev: true
 
   /aggregate-error/3.1.0:
@@ -8926,13 +8913,6 @@ packages:
       '@babel/runtime': 7.18.9
     dev: true
 
-  /regex-parser/2.2.11:
-    resolution:
-      {
-        integrity: sha512-jbD/FT0+9MBU2XAZluI7w2OBs1RBi6p9M83nkoZayQXXU9e8Robt69FcZc7wU4eJD/YFTjn1JdCk3rbMJajz8Q==,
-      }
-    dev: true
-
   /regexp.prototype.flags/1.4.3:
     resolution:
       {
@@ -9063,20 +9043,6 @@ packages:
     engines: { node: '>=8' }
     dependencies:
       global-dirs: 0.1.1
-    dev: true
-
-  /resolve-url-loader/5.0.0:
-    resolution:
-      {
-        integrity: sha512-uZtduh8/8srhBoMx//5bwqjQ+rfYOUq8zC9NrMUGtjBiGTtFJM42s58/36+hTqeqINcnYe08Nj3LkK9lW4N8Xg==,
-      }
-    engines: { node: '>=12' }
-    dependencies:
-      adjust-sourcemap-loader: 4.0.0
-      convert-source-map: 1.8.0
-      loader-utils: 2.0.2
-      postcss: 8.4.14
-      source-map: 0.6.1
     dev: true
 
   /resolve/1.22.1:
