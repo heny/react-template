@@ -6,3 +6,4 @@
 - 添加 husky
 - 添加 prettier
 - 添加 svg 转组件
+- 添加 react-query 组件

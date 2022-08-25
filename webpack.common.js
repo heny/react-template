@@ -49,7 +49,21 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|gif|jpg|jpeg|woff|ttf|eot)$/i,
+        test: /\.(woff|ttf|eot)$/i,
+        type: 'asset',
+        generator: {
+          // 文件生成目录
+          filename: `${publicPath}resources/font/[name].[ext]`,
+        },
+        parser: {
+          dataUrlCondition: {
+            // 最大限制，小于限制转换Base64
+            maxSize: 200 * 1024,
+          },
+        },
+      },
+      {
+        test: /\.(png|gif|jpg|jpeg)$/i,
         type: 'asset',
         generator: {
           // 文件生成目录
@@ -132,7 +146,17 @@ module.exports = {
        * 压缩 js
        * @see https://webpack.js.org/plugins/terser-webpack-plugin/
        */
-      new TerserPlugin(),
+      new TerserPlugin({
+        terserOptions: {
+          format: {
+            comments: false,
+          },
+          compress: {
+            drop_console: true,
+          },
+        },
+        extractComments: false,
+      }),
 
       /**
        * 使用 cssnano 优化
@@ -152,9 +176,13 @@ module.exports = {
     ],
     splitChunks: {
       chunks: 'all',
+      maxSize: 4000 * 1024,
+      name: 'vendors',
       cacheGroups: {
-        defaultVendors: {
-          name: 'vendors',
+        react: {
+          test: /[\\/]node_modules[\\/]react?.*/,
+          name: 'react',
+          chunks: 'all',
         },
       },
     },

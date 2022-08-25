@@ -6,7 +6,8 @@ const Home = lazy(() => import('@/views/Home'));
 interface Routes {
   title?: string;
   path: string;
-  component: React.LazyExoticComponent<any>;
+  component?: React.LazyExoticComponent<any>;
+  to?: string;
   children?: Routes[];
 }
 
@@ -15,6 +16,10 @@ const routes: Routes[] = [
     title: 'Home',
     path: '/',
     component: Home,
+  },
+  {
+    path: 'redirect',
+    to: '/',
   },
   {
     title: '404',
