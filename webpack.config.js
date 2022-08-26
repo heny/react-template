@@ -33,15 +33,6 @@ if (process.env.ANALYZE === 'true') {
 module.exports = merge(require('./webpack.common'), {
   mode: 'production',
   devtool: 'source-map',
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
   output: {
     filename: 'resources/js/[name].[chunkhash:8].js',
   },
