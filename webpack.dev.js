@@ -7,6 +7,15 @@ const publicPath = process.env.PUBLIC_PATH || '/';
 module.exports = merge(require('./webpack.common'), {
   mode: 'development',
   devtool: 'eval-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
   devServer: {
     static: path.resolve(__dirname, './public'),
     historyApiFallback:
