@@ -1,0 +1,21 @@
+[
+  {
+    "test": ".tsx?$",
+    "jsc": {
+      "parser": {
+        "syntax": "typescript",
+        "jsx": true
+      },
+      "transform": {
+        "react": {
+          // tsconfig.json 中 jsx 配置为 react-jsx 时，使用 “automatic” 配置
+          "runtime": "classic"
+        }
+      },
+      "target": "es2015"
+    },
+    "module": {
+      "type": "commonjs"
+    }
+  }
+]

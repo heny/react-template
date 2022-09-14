@@ -2,8 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dayjs = require('dayjs');
 const Dotenv = require('dotenv-webpack');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 const { GitRevisionPlugin } = require('git-revision-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -29,7 +28,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'babel-loader',
+        use: 'swc-loader',
         exclude: /node_modules/,
       },
       {
@@ -138,53 +137,6 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, './src'),
       public: path.resolve(__dirname, './public'),
-    },
-  },
-  optimization: {
-    minimizer: [
-      /**
-       * 压缩 js
-       * @see https://webpack.js.org/plugins/terser-webpack-plugin/
-       */
-      new TerserPlugin({
-        terserOptions: {
-          format: {
-            comments: false,
-          },
-          compress: {
-            drop_console: true,
-          },
-        },
-        extractComments: false,
-      }),
-
-      /**
-       * 使用 cssnano 优化
-       * @see https://webpack.js.org/plugins/css-minimizer-webpack-plugin/
-       */
-      new CssMinimizerPlugin({
-        minimizerOptions: {
-          preset: [
-            'advanced',
-            {
-              // zindex 不优化
-              zindex: false,
-            },
-          ],
-        },
-      }),
-    ],
-    splitChunks: {
-      chunks: 'all',
-      maxSize: 4000 * 1024,
-      name: 'vendors',
-      cacheGroups: {
-        react: {
-          test: /[\\/]node_modules[\\/]react?.*/,
-          name: 'react',
-          chunks: 'all',
-        },
-      },
     },
   },
 };
