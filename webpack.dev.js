@@ -16,7 +16,8 @@ module.exports = merge(require('./webpack.common'), {
             rewrites: [{ from: /./, to: `${publicPath}/index.html` }],
           },
     compress: true,
-    host: 'localhost',
+    // 这里不能是localhost，如果localhost手机端将无法连接
+    host: '0.0.0.0',
     // proxy: require('./proxy'),
     hot: true,
   },
